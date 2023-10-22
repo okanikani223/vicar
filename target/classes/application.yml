@@ -1,0 +1,11 @@
+logging:
+  level:
+    root: debug
+    org:
+      springframework:
+        boot:
+          autoconfigure:
+            logging: info
+server:
+  servlet:
+    context-path: /api
