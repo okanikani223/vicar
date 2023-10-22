@@ -8,3 +8,6 @@ logging:
 server:
   servlet:
     context-path: /api
+springdoc:
+  swagger-ui:
+    enabled: false
