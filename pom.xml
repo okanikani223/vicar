@@ -82,7 +82,7 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <apiDocsUrl>http://localhost:8080/api/v3/api-docs.yml</apiDocsUrl>
+                    <apiDocsUrl>http://localhost:8080/api/v3/api-docs.yaml</apiDocsUrl>
                     <outputFileName>spec.yml</outputFileName>
                 </configuration>
             </plugin>
