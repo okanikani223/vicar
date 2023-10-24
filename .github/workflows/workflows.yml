@@ -11,4 +11,4 @@ jobs:
           java-version: '17'
           cache: 'maven'
       - name: test with maven
-        run: mvn test
+        run: mvn verify
