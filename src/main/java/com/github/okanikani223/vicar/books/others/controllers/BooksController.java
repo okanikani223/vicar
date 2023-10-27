@@ -1,6 +1,7 @@
 package com.github.okanikani223.vicar.books.others.controllers;
 
 import com.github.okanikani223.vicar.books.others.controllers.dtos.Book;
+import com.github.okanikani223.vicar.books.others.controllers.dtos.BookRegistrationInfo;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
@@ -12,23 +13,22 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.Collections;
 import java.util.List;
-import java.util.Map;
 
 @Tag(name = "Books", description = "API to manage book information")
 @RequestMapping("/books")
 @RestController
 public class BooksController {
 
-    @Operation(summary = "Register your book information", responses = {
-            @ApiResponse(responseCode = "201", description = "Registered book information."),
+    @Operation(summary = "Register your book information", description = "Register books on the Web. If a book that has already been registered is entered, no registration will be made.", responses = {
+            @ApiResponse(responseCode = "201", description = "If the book could be registered or was already registered"),
             @ApiResponse(responseCode = "400", description = "Incomplete information to be registered", content = @Content(schema = @Schema))
     })
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.CREATED)
-    public Map<String, String> save(@RequestBody Book book) {
+    public BookRegistrationInfo save(@RequestBody Book book) {
         System.out.println(book);
 
-        return Map.of("id", "00001");
+        return new BookRegistrationInfo("00001");
     }
 
     @Operation(summary = "Retrieve information on all registered books", responses = {
