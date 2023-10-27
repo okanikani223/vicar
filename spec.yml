@@ -30,6 +30,8 @@ paths:
       tags:
       - Books
       summary: Register your book information
+      description: "Register books on the Web. If a book that has already been registered\
+        \ is entered, no registration will be made."
       operationId: save
       requestBody:
         content:
@@ -39,13 +41,11 @@ paths:
         required: true
       responses:
         "201":
-          description: Registered book information.
+          description: If the book could be registered or was already registered
           content:
             application/json:
               schema:
-                type: object
-                additionalProperties:
-                  type: string
+                $ref: '#/components/schemas/BookRegistrationInfo'
         "400":
           description: Incomplete information to be registered
   /books/{id}:
@@ -138,3 +138,8 @@ components:
       description: "List of book episodes. Set the episode number, episode title,\
         \ and episode URL."
       readOnly: true
+    BookRegistrationInfo:
+      type: object
+      properties:
+        id:
+          type: string
