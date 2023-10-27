@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Collections;
 import java.util.List;
 
-@Tag(name = "Books", description = "API to manage book information")
+@Tag(name = "Books", description = "API to manage books you are reading on the Web, allowing access to book information, updated episodes, etc.")
 @RequestMapping("/books")
 @RestController
 public class BooksController {
