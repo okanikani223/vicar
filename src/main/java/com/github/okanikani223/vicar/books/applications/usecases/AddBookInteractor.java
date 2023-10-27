@@ -10,6 +10,6 @@ public class AddBookInteractor implements UseCase<AddBooksInfoUseCaseInputDto, A
 
     @Override
     public AddBooksInfoUseCaseOutputDto handle(AddBooksInfoUseCaseInputDto input) {
-        return null;
+        return presenter.complete(new Object());
     }
 }
